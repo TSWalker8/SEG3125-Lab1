@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Seg3125-Lab1</string>
+    <string name="app_name"><font color='#3F4B3B'>Seg3125-Lab1</font></string>
+    <string name="Select">Select</string>
 </resources>
