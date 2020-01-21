@@ -1,5 +1,6 @@
 package com.coding.walker.seg3125_lab1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import java.util.List;
 public class WelcomeScreen extends AppCompatActivity {
     private Spinner options;
     private Button select;
+    private String choice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,7 @@ public class WelcomeScreen extends AppCompatActivity {
         options.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                choice= options.getSelectedItem().toString();
             }
 
             @Override
@@ -35,7 +37,9 @@ public class WelcomeScreen extends AppCompatActivity {
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent nextScreen = new Intent (WelcomeScreen.this, QuestionScreen.class);
+                nextScreen.putExtra("choice", choice);
+                WelcomeScreen.this.startActivity(nextScreen);
             }
         });
     }

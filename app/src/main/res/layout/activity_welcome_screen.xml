@@ -35,9 +35,10 @@
         android:layout_height="145dp"
         android:layout_marginTop="69dp"
         android:layout_marginBottom="79dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/Options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+        app:srcCompat="@drawable/geegee" />
 </android.support.constraint.ConstraintLayout>
