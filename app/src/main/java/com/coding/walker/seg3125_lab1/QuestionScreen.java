@@ -16,16 +16,16 @@ import java.util.HashMap;
 
 public class QuestionScreen extends AppCompatActivity {
 
-    ArrayList<HashMap<String, String>> optionList;
-    ArrayList<String> questionList;
+    ArrayList<HashMap<String, Choices>> optionList;
+    ArrayList<HashMap<String, Questions>> questionList;
     ArrayList<String> answerList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_screen);
-        optionList= new ArrayList<HashMap<String, String>>();
-        questionList= new ArrayList<String>();
+        optionList= new ArrayList<HashMap<String, Choices>>();
+        questionList= new ArrayList<Hashmap<String, Questions>();
         answerList= new ArrayList<String>();
         new GetInfo().execute();
     }
@@ -54,6 +54,8 @@ public class QuestionScreen extends AppCompatActivity {
                 JSONObject q = questions.getJSONObject(i);
                 String id = q.getString("id");
                 String title = q.getString("title");
+                Questions question = new Questions (id, title);
+                questionList.put(id, question);
             }
             JSONArray choices = jsonObj.getJSONArray("choices");
             for (int i = 0; i < choices.length(); i++) {
@@ -61,12 +63,10 @@ public class QuestionScreen extends AppCompatActivity {
                 String id = c.getString("id");
                 String body = c.getString("body");
                 String qid= c.getString("questionId");
+                Choices choice = new choice (id, body, qid);
+                choiceList.put(qid, choice);
             }
                 // Phone node is JSON Object
-                JSONObject phone = c.getJSONObject("phone");
-                String mobile = phone.getString("mobile");
-                String home = phone.getString("home");
-                String office = phone.getString("office");
 
                 // tmp hash map for single contact
                 HashMap<String, String> contact = new HashMap<>();
