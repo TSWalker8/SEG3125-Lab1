@@ -33,7 +33,7 @@ public class WelcomeScreen extends AppCompatActivity {
 
             }
         });
-        select= findViewById(R.id.Select);
+        select= findViewById(R.id.Buttonc);
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

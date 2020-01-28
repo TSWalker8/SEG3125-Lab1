@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,47 +20,87 @@ import java.util.HashMap;
 
 public class QuestionScreen extends AppCompatActivity {
 
-    ArrayList<HashMap<String, Choices>> choiceList;
+    ArrayList<Choices> choiceList;
     ArrayList <Questions> questionList;
     ArrayList<String> answerList;
     TextView title;
     TextView question;
-    Button select;
+    Button buttona, buttonb, buttonc;
+    String text;
+    int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_screen);
-        choiceList = new ArrayList<HashMap<String, Choices>>();
+        choiceList = new ArrayList<Choices>();
         questionList = new ArrayList<Questions>();
         answerList = new ArrayList<String>();
-        new GetInfo().execute();
-        System.out.println(questionList.get(1).getTitle());
         Intent intent = getIntent();
-        String text = intent.getStringExtra("choice");
+        text = intent.getStringExtra("choice");
         System.out.println(text);
         title = findViewById(R.id.Title);
         title.setText(text);
         question= findViewById(R.id.Question);
-        select= findViewById(R.id.Select);
-        questionTime();
-
-
-    }
-
-    private void questionTime(){
-        System.out.println("questionTime");
-        System.out.println(questionList.get(0).getTitle());
-        question.setText(questionList.get(1).getTitle());
+        buttona= findViewById(R.id.Buttona);
+        buttonb=findViewById(R.id.Buttonb);
+        buttonc= findViewById(R.id.Buttonc);
+        new GetInfo().execute();
 
     }
 
+    public class GetInfo extends AsyncTask<Void, Void, Void> {
 
-    private class GetInfo extends AsyncTask<Void, Void, Void> {
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(getApplicationContext(), "Loading", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Loading", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            i=0;
+            System.out.println(text.equals("Boating License"));
+            if (text.equals("Boating License")){
+                    System.out.println("Hello");
+                    question.setText(questionList.get(i).getTitle());
+                    buttona.setText(choiceList.get(i).getBody());
+                    buttonb.setText(choiceList.get(i+1).getBody());
+                    buttonc.setText(choiceList.get(i+2).getBody());
+                    buttona.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            i++;
+                            question.setText(questionList.get(i).getTitle());
+                            buttona.setText(choiceList.get(i).getBody());
+                            buttonb.setText(choiceList.get(i+1).getBody());
+                            buttonc.setText(choiceList.get(i+2).getBody());
+                        }
+                    });
+                    buttonb.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            i++;
+                            question.setText(questionList.get(i).getTitle());
+                            buttona.setText(choiceList.get(i).getBody());
+                            buttonb.setText(choiceList.get(i+1).getBody());
+                            buttonc.setText(choiceList.get(i+2).getBody());
+                        }
+                    });
+                    buttonc.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            i++;
+                            question.setText(questionList.get(i).getTitle());
+                            buttona.setText(choiceList.get(i).getBody());
+                            buttonb.setText(choiceList.get(i+1).getBody());
+                            buttonc.setText(choiceList.get(i+2).getBody());
+                        }
+                    });
+            }
+
         }
 
         @Override
@@ -138,11 +179,10 @@ public class QuestionScreen extends AppCompatActivity {
                     ex.printStackTrace();
                 }
                 Choices choice = new Choices(id, body, qid);
-                HashMap<String, Choices> h = new HashMap<String, Choices>();
-                h.put(qid, choice);
-                choiceList.add(h);
+                choiceList.add(choice);
             }
-
+            System.out.println("END CHECK");
+            System.out.println(questionList.get(1).getTitle());
             return null;
         }
 
@@ -162,6 +202,7 @@ public class QuestionScreen extends AppCompatActivity {
             }
             return json;
         }
+
 
     }
 }
