@@ -1,5 +1,6 @@
 package com.coding.walker.seg3125_lab1;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import java.util.HashMap;
 
 public class QuestionScreen extends AppCompatActivity {
 
-    ArrayList<HashMap<String, Choices>> optionList;
+    ArrayList<HashMap<String, Choices>> choiceList;
     ArrayList<HashMap<String, Questions>> questionList;
     ArrayList<String> answerList;
 
@@ -24,15 +25,19 @@ public class QuestionScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_screen);
-        optionList= new ArrayList<HashMap<String, Choices>>();
-        questionList= new ArrayList<Hashmap<String, Questions>();
-        answerList= new ArrayList<String>();
+        choiceList = new ArrayList<HashMap<String, Choices>>();
+        questionList = new ArrayList<HashMap<String, Questions>>();
+        answerList = new ArrayList<String>();
         new GetInfo().execute();
+
+        Intent intent = getIntent();
+        String text = intent.getStringExtra("choice");
+
     }
 
-    private class GetInfo extends AsyncTask<Void, Void, Void>{
+    private class GetInfo extends AsyncTask<Void, Void, Void> {
         @Override
-        protected void onPreExecute(){
+        protected void onPreExecute() {
             super.onPreExecute();
             Toast.makeText(getApplicationContext(), "Loading", Toast.LENGTH_LONG).show();
         }
@@ -47,50 +52,78 @@ public class QuestionScreen extends AppCompatActivity {
             }
 
             // Getting JSON Array node
-            JSONArray questions = jsonObj.getJSONArray("questions");
+            JSONArray questions = null;
+            try {
+                questions = jsonObj.getJSONArray("questions");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
 
             for (int i = 0; i < questions.length(); i++) {
-                JSONObject q = questions.getJSONObject(i);
-                String id = q.getString("id");
-                String title = q.getString("title");
-                Questions question = new Questions (id, title);
-                questionList.put(id, question);
-            }
-            JSONArray choices = jsonObj.getJSONArray("choices");
-            for (int i = 0; i < choices.length(); i++) {
-                JSONObject c = choices.getJSONObject(i);
-                String id = c.getString("id");
-                String body = c.getString("body");
-                String qid= c.getString("questionId");
-                Choices choice = new choice (id, body, qid);
-                choiceList.put(qid, choice);
-            }
-                // Phone node is JSON Object
-
-                // tmp hash map for single contact
-                HashMap<String, String> contact = new HashMap<>();
-
-                // adding each child node to HashMap key => value
-                contact.put("id", id);
-                contact.put("name", name);
-                contact.put("email", email);
-                contact.put("mobile", mobile);
-
-                // adding contact to contact list
-                contactList.add(contact);
-            }
-        } catch (final JSONException e) {
-            Log.e(TAG, "Json parsing error: " + e.getMessage());
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(getApplicationContext(),
-                            "Json parsing error: " + e.getMessage(),
-                            Toast.LENGTH_LONG).show();
+                JSONObject q = null;
+                try {
+                    q = questions.getJSONObject(i);
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            });
-    }
+                String id = null;
+                try {
+                    id = q.getString("id");
+                } catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
+                String title = null;
+                try {
+                    title = q.getString("title");
+                } catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
+                Questions question = new Questions(id, title);
+                HashMap<String, Questions> h = new HashMap<String, Questions>();
+                h.put(id, question);
+                questionList.add(h);
+            }
+            JSONArray choices = null;
+            try {
+                choices = jsonObj.getJSONArray("choices");
+            } catch (JSONException ex) {
+                ex.printStackTrace();
+            }
+            for (int i = 0; i < choices.length(); i++) {
+                JSONObject c = null;
+                try {
+                    c = choices.getJSONObject(i);
+                } catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
+                String id = null;
+                try {
+                    id = c.getString("id");
+                } catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
+                String body = null;
+                try {
+                    body = c.getString("body");
+                } catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
+                String qid = null;
+                try {
+                    qid = c.getString("questionId");
+                } catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
+                Choices choice = new Choices(id, body, qid);
+                HashMap<String, Choices> h = new HashMap<String, Choices>();
+                h.put(qid, choice);
+                choiceList.add(h);
+            }
+
+            return null;
+        }
+
         public String loadJSONFromAsset() {
             String json = null;
             try {
@@ -106,8 +139,6 @@ public class QuestionScreen extends AppCompatActivity {
             }
             return json;
         }
-    {
 
     }
-
 }

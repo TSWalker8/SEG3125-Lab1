@@ -49,7 +49,6 @@ public class WelcomeScreen extends AppCompatActivity {
         options = findViewById(R.id.Options);
         List<String> list = new ArrayList<String>();
         list.add("Boating License");
-        list.add("A+ Certification");
         list.add("G1 License");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
