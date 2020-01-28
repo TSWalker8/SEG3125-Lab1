@@ -193,5 +193,58 @@
       "body": "Headache.",
       "questionId": 10
     }
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "choiceId": 1,
+      "questionId": 1
+    },
+    {
+      "id": 2,
+      "choiceId": 4,
+      "questionId": 2
+    },
+    {
+      "id": 3,
+      "choiceId": 9,
+      "questionId": 3
+    },
+    {
+      "id": 4,
+      "choiceId": 12,
+      "questionId": 4
+    },
+    {
+      "id": 5,
+      "choiceId": 14,
+      "questionId": 5
+    },
+    {
+      "id": 6,
+      "choiceId": 16,
+      "questionId": 6
+    },
+    {
+      "id": 7,
+      "choiceId": 20,
+      "questionId": 7
+    },
+    {
+      "id": 8,
+      "choiceId": 24,
+      "questionId": 8
+    },
+    {
+      "id": 9,
+      "choiceId": 27,
+      "questionId": 9
+    },
+    {
+      "id": 10,
+      "choiceId": 30,
+      "questionId": 10
+    }
+
   ]
 }

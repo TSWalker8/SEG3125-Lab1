@@ -27,7 +27,7 @@
     {
       "id": 7,
       "title": "You’re a G2 driver, what should your blood alcohol level be while driving?"
-    },
+    }
     {
       "id": 8,
       "title": "You’ve changed your home address. How soon are you (a licensed driver) supposed to notify the MTO?"
@@ -39,7 +39,7 @@
     {
       "id": 10,
       "title": "While driving on a highway, on what condition can you drive at a maximum speed limit?"
-    }
+    },
 
   ],
   "choices": [
@@ -193,5 +193,58 @@
       "body": "There are no conditions, you may always drive at the maximum speed limit.",
       "questionId": 10
     }
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "choiceId": 1,
+      "questionId": 1
+    },
+    {
+      "id": 2,
+      "choiceId": 5,
+      "questionId": 2
+    },
+    {
+      "id": 3,
+      "choiceId": 9,
+      "questionId": 3
+    },
+    {
+      "id": 4,
+      "choiceId": 11,
+      "questionId": 4
+    },
+    {
+      "id": 5,
+      "choiceId": 13,
+      "questionId": 5
+    },
+    {
+      "id": 6,
+      "choiceId": 18,
+      "questionId": 6
+    },
+    {
+      "id": 7,
+      "choiceId": 21,
+      "questionId": 7
+    },
+    {
+      "id": 8,
+      "choiceId": 23,
+      "questionId": 8
+    },
+    {
+      "id": 9,
+      "choiceId": 27,
+      "questionId": 9
+    },
+    {
+      "id": 10,
+      "choiceId": 28,
+      "questionId": 10
+    }
+
   ]
 }
