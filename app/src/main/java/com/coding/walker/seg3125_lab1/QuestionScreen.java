@@ -63,36 +63,34 @@ public class QuestionScreen extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             System.out.println(text.equals("Boating License"));
-            if (text.equals("Boating License")) {
-                i = 0;
-                j=0;
-                k=1;
-                j=2;
-                System.out.println("Hello");
-                question.setText(questionList.get(i).getTitle());
-                buttona.setText(choiceList.get(j).getBody());
-                buttonb.setText(choiceList.get(k).getBody());
-                buttonc.setText(choiceList.get(l).getBody());
-                buttona.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        changeQuestion();
-                    }
-                });
-                buttonb.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        changeQuestion();
-                    }
-                });
-                buttonc.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        changeQuestion();
-                    }
-                });
+            i=0;
+            j=0;
+            k=1;
+            j=2;
+            System.out.println("Hello");
+            question.setText(questionList.get(i).getTitle());
+            buttona.setText(choiceList.get(j).getBody());
+            buttonb.setText(choiceList.get(k).getBody());
+            buttonc.setText(choiceList.get(l).getBody());
+            buttona.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    changeQuestion();
+                }
+            });
+            buttonb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    changeQuestion();
+                }
+            });
+            buttonc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    changeQuestion();
+                }
+            });
 
-            }
         }
 
         protected void changeQuestion(){
@@ -195,6 +193,7 @@ public class QuestionScreen extends AppCompatActivity {
 
         public String loadJSONFromAsset() {
             System.out.println("HELLO");
+            System.out.println(text);
             String json = null;
             try {
                 if (text.equals("Boating License")){
