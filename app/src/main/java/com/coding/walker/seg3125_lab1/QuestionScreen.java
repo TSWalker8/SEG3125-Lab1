@@ -197,12 +197,22 @@ public class QuestionScreen extends AppCompatActivity {
             System.out.println("HELLO");
             String json = null;
             try {
-                InputStream is = getAssets().open("db.json");
-                int size = is.available();
-                byte[] buffer = new byte[size];
-                is.read(buffer);
-                is.close();
-                json = new String(buffer, "UTF-8");
+                if (text.equals("Boating License")){
+                    InputStream is = getAssets().open("Boating.json");
+                    int size = is.available();
+                    byte[] buffer = new byte[size];
+                    is.read(buffer);
+                    is.close();
+                    json = new String(buffer, "UTF-8");
+                }
+                else{
+                    InputStream is = getAssets().open("G1.json");
+                    int size = is.available();
+                    byte[] buffer = new byte[size];
+                    is.read(buffer);
+                    is.close();
+                    json = new String(buffer, "UTF-8");
+                }
             } catch (IOException ex) {
                 ex.printStackTrace();
                 return null;
