@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -18,22 +20,40 @@ import java.util.HashMap;
 public class QuestionScreen extends AppCompatActivity {
 
     ArrayList<HashMap<String, Choices>> choiceList;
-    ArrayList<HashMap<String, Questions>> questionList;
+    ArrayList <Questions> questionList;
     ArrayList<String> answerList;
+    TextView title;
+    TextView question;
+    Button select;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_screen);
         choiceList = new ArrayList<HashMap<String, Choices>>();
-        questionList = new ArrayList<HashMap<String, Questions>>();
+        questionList = new ArrayList<Questions>();
         answerList = new ArrayList<String>();
         new GetInfo().execute();
-
+        System.out.println(questionList.get(1).getTitle());
         Intent intent = getIntent();
         String text = intent.getStringExtra("choice");
+        System.out.println(text);
+        title = findViewById(R.id.Title);
+        title.setText(text);
+        question= findViewById(R.id.Question);
+        select= findViewById(R.id.Select);
+        questionTime();
+
 
     }
+
+    private void questionTime(){
+        System.out.println("questionTime");
+        System.out.println(questionList.get(0).getTitle());
+        question.setText(questionList.get(1).getTitle());
+
+    }
+
 
     private class GetInfo extends AsyncTask<Void, Void, Void> {
         @Override
@@ -70,19 +90,21 @@ public class QuestionScreen extends AppCompatActivity {
                 String id = null;
                 try {
                     id = q.getString("id");
+                    System.out.println(id);
                 } catch (JSONException ex) {
                     ex.printStackTrace();
                 }
                 String title = null;
                 try {
                     title = q.getString("title");
+                    System.out.println(title);
                 } catch (JSONException ex) {
                     ex.printStackTrace();
                 }
                 Questions question = new Questions(id, title);
-                HashMap<String, Questions> h = new HashMap<String, Questions>();
-                h.put(id, question);
-                questionList.add(h);
+                System.out.println("CHECK");
+                System.out.println(question.getTitle());
+                questionList.add(question);
             }
             JSONArray choices = null;
             try {
@@ -125,6 +147,7 @@ public class QuestionScreen extends AppCompatActivity {
         }
 
         public String loadJSONFromAsset() {
+            System.out.println("HELLO");
             String json = null;
             try {
                 InputStream is = getAssets().open("db.json");

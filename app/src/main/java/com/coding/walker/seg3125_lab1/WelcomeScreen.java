@@ -39,7 +39,7 @@ public class WelcomeScreen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent nextScreen = new Intent (WelcomeScreen.this, QuestionScreen.class);
                 nextScreen.putExtra("choice", choice);
-                WelcomeScreen.this.startActivity(nextScreen);
+                startActivity(nextScreen);
             }
         });
     }

@@ -7,30 +7,31 @@
     tools:context=".QuestionScreen">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="198dp"
         android:layout_marginBottom="55dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/Choices"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/Choices"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="54dp"
         android:layout_marginBottom="61dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/Select"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/Question" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
@@ -39,5 +40,22 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/Choices" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="146dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginLeft="126dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginRight="127dp"
+        android:layout_marginBottom="111dp"
+        android:text="TextView"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/Question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
