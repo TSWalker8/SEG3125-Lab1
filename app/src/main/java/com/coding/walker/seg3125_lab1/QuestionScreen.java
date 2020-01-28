@@ -27,7 +27,8 @@ public class QuestionScreen extends AppCompatActivity {
     TextView question;
     Button buttona, buttonb, buttonc;
     String text;
-    int i;
+    int i,j,k,l;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,46 +62,58 @@ public class QuestionScreen extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            i=0;
             System.out.println(text.equals("Boating License"));
-            if (text.equals("Boating License")){
-                    System.out.println("Hello");
-                    question.setText(questionList.get(i).getTitle());
-                    buttona.setText(choiceList.get(i).getBody());
-                    buttonb.setText(choiceList.get(i+1).getBody());
-                    buttonc.setText(choiceList.get(i+2).getBody());
-                    buttona.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            i++;
-                            question.setText(questionList.get(i).getTitle());
-                            buttona.setText(choiceList.get(i).getBody());
-                            buttonb.setText(choiceList.get(i+1).getBody());
-                            buttonc.setText(choiceList.get(i+2).getBody());
-                        }
-                    });
-                    buttonb.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            i++;
-                            question.setText(questionList.get(i).getTitle());
-                            buttona.setText(choiceList.get(i).getBody());
-                            buttonb.setText(choiceList.get(i+1).getBody());
-                            buttonc.setText(choiceList.get(i+2).getBody());
-                        }
-                    });
-                    buttonc.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            i++;
-                            question.setText(questionList.get(i).getTitle());
-                            buttona.setText(choiceList.get(i).getBody());
-                            buttonb.setText(choiceList.get(i+1).getBody());
-                            buttonc.setText(choiceList.get(i+2).getBody());
-                        }
-                    });
-            }
+            if (text.equals("Boating License")) {
+                i = 0;
+                j=0;
+                k=1;
+                j=2;
+                System.out.println("Hello");
+                question.setText(questionList.get(i).getTitle());
+                buttona.setText(choiceList.get(j).getBody());
+                buttonb.setText(choiceList.get(k).getBody());
+                buttonc.setText(choiceList.get(l).getBody());
+                buttona.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        i++;
+                        j=j+3;
+                        k=k+3;
+                        l=l+3;
+                        question.setText(questionList.get(i).getTitle());
+                        buttona.setText(choiceList.get(j).getBody());
+                        buttonb.setText(choiceList.get(k).getBody());
+                        buttonc.setText(choiceList.get(l).getBody());
+                    }
+                });
+                buttonb.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        i++;
+                        j=j+3;
+                        k=k+3;
+                        l=l+3;
+                        question.setText(questionList.get(i).getTitle());
+                        buttona.setText(choiceList.get(j).getBody());
+                        buttonb.setText(choiceList.get(k).getBody());
+                        buttonc.setText(choiceList.get(l).getBody());
+                    }
+                });
+                buttonc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        i++;
+                        j=j+3;
+                        k=k+3;
+                        l=l+3;
+                        question.setText(questionList.get(i).getTitle());
+                        buttona.setText(choiceList.get(j).getBody());
+                        buttonb.setText(choiceList.get(k).getBody());
+                        buttonc.setText(choiceList.get(l).getBody());
+                    }
+                });
 
+            }
         }
 
         @Override
