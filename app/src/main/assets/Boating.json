@@ -1,0 +1,197 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "title": "Which of the following boating safety equipment is required on a personal watercraft:"
+    },
+    {
+      "id": 2,
+      "title": "Why is it important to use HELP position if you are submersed in cold water?"
+    },
+    {
+      "id": 3,
+      "title": "Which of the following is the most suitable place to store a marine fire extinguisher?"
+    },
+    {
+      "id": 4,
+      "title": "Which of the following situations is considered the most dangerous onboard a vessel?"
+    },
+    {
+      "id": 5,
+      "title": "When a storm hits while a vessel is underway, the operator should do which of the following?"
+    },
+    {
+      "id": 6,
+      "title": "Which of the following is a characteristic of a properly fitted personal flotation device (PFD)?"
+    },
+    {
+      "id": 7,
+      "title": "Other than seeking medical attention, what is the best treatment for a hypothermia victim?"
+    },
+    {
+      "id": 8,
+      "title": "Which of the following indicates the PORT side of this vessel?"
+    },
+    {
+      "id": 9,
+      "title": "Which of the following describes hypothermia?"
+    },
+    {
+      "id": 10,
+      "title": "Which of the following is one of the early symptoms of carbon monoxide poisoning?"
+    }
+
+  ],
+  "choices": [
+    {
+      "id": 1,
+      "body": "sound signalling device.",
+      "questionId": 1
+    },
+    {
+      "id": 2,
+      "body": "VHF radio.",
+      "questionId": 1
+    },
+    {
+      "id": 3,
+      "body": "Manual water pump.",
+      "questionId": 1
+    },
+    {
+      "id": 4,
+      "body": "It increases survival time by reducing heat loss.",
+      "questionId": 2
+    },
+    {
+      "id": 5,
+      "body": "It helps you be seen by other boaters who may assist you.",
+      "questionId": 2
+    },
+    {
+      "id": 6,
+      "body": "It warns other boaters nearby by the potential danger in the area.",
+      "questionId": 2
+    },
+    {
+      "id": 7,
+      "body": "Along with the boat trailer.",
+      "questionId": 3
+    },
+    {
+      "id": 8,
+      "body": "Under the seats near the motor.",
+      "questionId": 3
+    },
+    {
+      "id": 9,
+      "body": "In an open area where it is easily accessible.",
+      "questionId": 3
+    },
+    {
+      "id": 10,
+      "body": "Not having a tool box on board.",
+      "questionId": 4
+    },
+    {
+      "id": 11,
+      "body": "Not having enough whistles on board.",
+      "questionId": 4
+    },
+    {
+      "id": 12,
+      "body": "Not having enough PFD's on board.",
+      "questionId": 4
+    },
+    {
+      "id": 13,
+      "body": "Takes waves from the port or starboard side, never head on.",
+      "questionId": 5
+    },
+    {
+      "id": 14,
+      "body": "Ensure that all those onboard are wearing a personal flotation device.",
+      "questionId": 5
+    },
+    {
+      "id": 15,
+      "body": "Shift all passengers to the highest point onboard the boat.",
+      "questionId": 5
+    },
+    {
+      "id": 16,
+      "body": "It should be a relatively snug fit.",
+      "questionId": 6
+    },
+    {
+      "id": 17,
+      "body": "it should rise above the ears and mouth.",
+      "questionId": 6
+    },
+    {
+      "id": 18,
+      "body": "It should be uncomfortable.",
+      "questionId": 6
+    },
+    {
+      "id": 19,
+      "body": "Vigorous massage.",
+      "questionId": 7
+    },
+    {
+      "id": 20,
+      "body": "Slow warming.",
+      "questionId": 7
+    },
+    {
+      "id": 21,
+      "body": "Hot bath.",
+      "questionId": 7
+    },
+    {
+      "id": 22,
+      "body": "Front.",
+      "questionId": 8
+    },
+    {
+      "id": 23,
+      "body": "Right.",
+      "questionId": 8
+    },
+    {
+      "id": 24,
+      "body": "Left.",
+      "questionId": 8
+    },
+    {
+      "id": 25,
+      "body": "A drop in water temperature below the normal level.",
+      "questionId": 9
+    },
+    {
+      "id": 26,
+      "body": "An elevation in body temperature above the normal level.",
+      "questionId": 9
+    },
+    {
+      "id": 27,
+      "body": "A drop in body temperature below the normal level.",
+      "questionId": 9
+    },
+    {
+      "id": 28,
+      "body": "Shivering.",
+      "questionId": 10
+    },
+    {
+      "id": 29,
+      "body": "Extreme hunger.",
+      "questionId": 10
+    },
+    {
+      "id": 30,
+      "body": "Headache.",
+      "questionId": 10
+    }
+  ]
+}

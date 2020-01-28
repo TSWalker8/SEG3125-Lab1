@@ -1,0 +1,197 @@
+{
+  "questions": [
+  {
+      "id": 11,
+      "title": "You are driving at an intersection and notice that there is no police officer or signal light nearby. A few seconds later a pedestrian appears at the crosswalk towards your side of the road. What do you do?"
+    },
+    {
+      "id": 12,
+      "title": "Motorists are not allowed to change lanes in traffic without:"
+    },
+    {
+      "id": 13,
+      "title": "You see a school bus unloading passengers on the road but have failed to stop your car. This will result in?"
+    },
+    {
+      "id": 14,
+      "title": "You’re descending down a steep hill using manual transmission, what safe driving practice should you use:"
+    },
+    {
+      "id": 15,
+      "title": "Motorists who don’t follow the stopping rules meant for school crossing will incur:"
+    },
+    {
+      "id": 16,
+      "title": "Motorists who don’t follow the stopping rules meant for school crossing will incur:"
+    },
+    {
+      "id": 17,
+      "title": "You’re a G2 driver, what should your blood alcohol level be while driving?"
+    }
+    {
+      "id": 18,
+      "title": "You’ve changed your home address. How soon are you (a licensed driver) supposed to notify the MTO?"
+    },
+    {
+      "id": 19,
+      "title": "You’re changing lanes on a multi-lane highway. What are you supposed to do?"
+    },
+    {
+      "id": 20,
+      "title": "While driving on a highway, on what condition can you drive at a maximum speed limit?"
+    },
+
+  ],
+  "choices": [
+    {
+      "id": 1,
+      "body": "Stop your car and yield way to pedestrian.",
+      "questionId": 1
+    },
+    {
+      "id": 2,
+      "body": "You have the right of way.",
+      "questionId": 1
+    },
+    {
+      "id": 3,
+      "body": "Speed up the pedestrain must wait for you.",
+      "questionId": 1
+    },
+    {
+      "id": 4,
+      "body": "Slowing down.",
+      "questionId": 2
+    },
+    {
+      "id": 5,
+      "body": "Giving proper signal to fellow motorists.",
+      "questionId": 2
+    },
+    {
+      "id": 6,
+      "body": "Checking mirrors.",
+      "questionId": 2
+    },
+    {
+      "id": 7,
+      "body": "Failing to stop for a school bus unloading passengers will cost the driver 6 demerit points along with a fine of up to $1,000.",
+      "questionId": 3
+    },
+    {
+      "id": 8,
+      "body": "Failing to stop for a school bus unloading passengers will cost the driver 3 demerit points along with a fine of up to $2,000.",
+      "questionId": 3
+    },
+    {
+      "id": 9,
+      "body": "Failing to stop for a school bus unloading passengers will cost the driver 6 demerit points along with a fine of up to $2,000.",
+      "questionId": 3
+    },
+    {
+      "id": 10,
+      "body": "Safest driving practice here would be to use the breaks.",
+      "questionId": 4
+    },
+    {
+      "id": 11,
+      "body": "Safest driving practice here would be to gear down and use the engine to ensure braking.",
+      "questionId": 4
+    },
+    {
+      "id": 12,
+      "body": "Safest driving practice here would be to pull the clutch in.",
+      "questionId": 4
+    },
+    {
+      "id": 13,
+      "body": "3 demerit points and a substantial fine.",
+      "questionId": 5
+    },
+    {
+      "id": 14,
+      "body": "2 demerit points and a substantial fine.",
+      "questionId": 5
+    },
+    {
+      "id": 15,
+      "body": "5 demerit points and a substantial fine.",
+      "questionId": 5
+    },
+    {
+      "id": 16,
+      "body": "0.1%",
+      "questionId": 6
+    },
+    {
+      "id": 17,
+      "body": "0.01%",
+      "questionId": 6
+    },
+    {
+      "id": 18,
+      "body": "0.00%",
+      "questionId": 6
+    },
+    {
+      "id": 19,
+      "body": "You may overtake as long as you leave 3 meters between you and the bus.",
+      "questionId": 7
+    },
+    {
+      "id": 20,
+      "body": "If the door of the bus is closed you may proceed.",
+      "questionId": 7
+    },
+    {
+      "id": 21,
+      "body": "You must stop until the signal lights start flashing or until the bus proceeds.",
+      "questionId": 7
+    },
+    {
+      "id": 22,
+      "body": "Within 30 days.",
+      "questionId": 8
+    },
+    {
+      "id": 23,
+      "body": "Within 6 days.",
+      "questionId": 8
+    },
+    {
+      "id": 24,
+      "body": "Within 10 days.",
+      "questionId": 8
+    },
+    {
+      "id": 25,
+      "body": "Check your car mirrors before making a move.",
+      "questionId": 9
+    },
+    {
+      "id": 26,
+      "body": "Check the signal before making a move.",
+      "questionId": 9
+    },
+    {
+      "id": 27,
+      "body": "Check the signal and your car mirrors before making a move.",
+      "questionId": 9
+    },
+    {
+      "id": 28,
+      "body": ": You may drive at a maximum speed limit so long as the condition of the traffic deems it safe and it complies with the speed limit.",
+      "questionId": 10
+    },
+    {
+      "id": 29,
+      "body": "You may drive at a maximum speed limit so long as you feel comfortable.",
+      "questionId": 10
+    },
+    {
+      "id": 30,
+      "body": "There are no conditions, you may always drive at the maximum speed limit.",
+      "questionId": 10
+    }
+  ]
+}
