@@ -76,44 +76,38 @@ public class QuestionScreen extends AppCompatActivity {
                 buttona.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        i++;
-                        j=j+3;
-                        k=k+3;
-                        l=l+3;
-                        question.setText(questionList.get(i).getTitle());
-                        buttona.setText(choiceList.get(j).getBody());
-                        buttonb.setText(choiceList.get(k).getBody());
-                        buttonc.setText(choiceList.get(l).getBody());
+                        changeQuestion();
                     }
                 });
                 buttonb.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        i++;
-                        j=j+3;
-                        k=k+3;
-                        l=l+3;
-                        question.setText(questionList.get(i).getTitle());
-                        buttona.setText(choiceList.get(j).getBody());
-                        buttonb.setText(choiceList.get(k).getBody());
-                        buttonc.setText(choiceList.get(l).getBody());
+                        changeQuestion();
                     }
                 });
                 buttonc.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        i++;
-                        j=j+3;
-                        k=k+3;
-                        l=l+3;
-                        question.setText(questionList.get(i).getTitle());
-                        buttona.setText(choiceList.get(j).getBody());
-                        buttonb.setText(choiceList.get(k).getBody());
-                        buttonc.setText(choiceList.get(l).getBody());
+                        changeQuestion();
                     }
                 });
 
             }
+        }
+
+        protected void changeQuestion(){
+            i++;
+            j=j+3;
+            k=k+3;
+            l=l+3;
+            question.setText(questionList.get(i).getTitle());
+            buttona.setText(choiceList.get(j).getBody());
+            buttonb.setText(choiceList.get(k).getBody());
+            buttonc.setText(choiceList.get(l).getBody());
+        }
+
+        protected void passfail(){
+
         }
 
         @Override
