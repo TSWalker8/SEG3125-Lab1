@@ -2,43 +2,53 @@
   "questions": [
     {
       "id": 1,
-      "title": "Which of the following boating safety equipment is required on a personal watercraft:"
+      "title": "Which of the following boating safety equipment is required on a personal watercraft:",
+      "answerId": 1
     },
     {
       "id": 2,
-      "title": "Why is it important to use HELP position if you are submersed in cold water?"
+      "title": "Why is it important to use HELP position if you are submersed in cold water?",
+      "answerId": 1
     },
     {
       "id": 3,
-      "title": "Which of the following is the most suitable place to store a marine fire extinguisher?"
+      "title": "Which of the following is the most suitable place to store a marine fire extinguisher?",
+      "answerId": 3
     },
     {
       "id": 4,
-      "title": "Which of the following situations is considered the most dangerous onboard a vessel?"
+      "title": "Which of the following situations is considered the most dangerous onboard a vessel?",
+      "answerId": 3
     },
     {
       "id": 5,
-      "title": "When a storm hits while a vessel is underway, the operator should do which of the following?"
+      "title": "When a storm hits while a vessel is underway, the operator should do which of the following?",
+      "answerId": 2
     },
     {
       "id": 6,
-      "title": "Which of the following is a characteristic of a properly fitted personal flotation device (PFD)?"
+      "title": "Which of the following is a characteristic of a properly fitted personal flotation device (PFD)?",
+      "answerId": 1
     },
     {
       "id": 7,
-      "title": "Other than seeking medical attention, what is the best treatment for a hypothermia victim?"
+      "title": "Other than seeking medical attention, what is the best treatment for a hypothermia victim?",
+      "answerId": 2
     },
     {
       "id": 8,
-      "title": "Which of the following indicates the PORT side of this vessel?"
+      "title": "Which of the following indicates the PORT side of this vessel?",
+      "answerId": 3
     },
     {
       "id": 9,
-      "title": "Which of the following describes hypothermia?"
+      "title": "Which of the following describes hypothermia?",
+      "answerId": 3
     },
     {
       "id": 10,
-      "title": "Which of the following is one of the early symptoms of carbon monoxide poisoning?"
+      "title": "Which of the following is one of the early symptoms of carbon monoxide poisoning?",
+      "answerId": 3
     }
 
   ],

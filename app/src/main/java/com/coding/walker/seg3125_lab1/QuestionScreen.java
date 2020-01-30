@@ -27,7 +27,7 @@ public class QuestionScreen extends AppCompatActivity {
     TextView question;
     Button buttona, buttonb, buttonc;
     String text;
-    int i,j,k,l;
+    int i,j,k,l, count, qcount;
 
 
     @Override
@@ -67,6 +67,8 @@ public class QuestionScreen extends AppCompatActivity {
             j=0;
             k=1;
             j=2;
+            count=0;
+            qcount=1;
             System.out.println("Hello");
             question.setText(questionList.get(i).getTitle());
             buttona.setText(choiceList.get(j).getBody());
@@ -75,18 +77,45 @@ public class QuestionScreen extends AppCompatActivity {
             buttona.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if (questionList.get(i).getAnswer().equals("1")){
+                        count++;
+                    }
+                    if (qcount>= 10){
+                        resultScreen();
+                    }
+                    qcount++;
+                    System.out.println(i);
+                    System.out.println(qcount);
                     changeQuestion();
                 }
             });
             buttonb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if (questionList.get(i).getAnswer().equals("2")){
+                        count++;
+                    }
+                    if (qcount>= 10){
+                        resultScreen();
+                    }
+                    qcount++;
+                    System.out.println(i);
+                    System.out.println(qcount);
                     changeQuestion();
                 }
             });
             buttonc.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if (questionList.get(i).getAnswer().equals("3")){
+                        count++;
+                    }
+                    if (qcount>= 10){
+                        resultScreen();
+                    }
+                    qcount++;
+                    System.out.println(i);
+                    System.out.println(qcount);
                     changeQuestion();
                 }
             });
@@ -94,19 +123,30 @@ public class QuestionScreen extends AppCompatActivity {
         }
 
         protected void changeQuestion(){
-            i++;
-            j=j+3;
-            k=k+3;
-            l=l+3;
-            question.setText(questionList.get(i).getTitle());
-            buttona.setText(choiceList.get(j).getBody());
-            buttonb.setText(choiceList.get(k).getBody());
-            buttonc.setText(choiceList.get(l).getBody());
+            if (qcount <=10){
+                i++;
+                j=j+3;
+                k=k+3;
+                l=l+3;
+                question.setText(questionList.get(i).getTitle());
+                buttona.setText(choiceList.get(j).getBody());
+                buttonb.setText(choiceList.get(k).getBody());
+                buttonc.setText(choiceList.get(l).getBody());
+            }
+
         }
 
-        protected void passfail(){
-
+        protected void resultScreen(){
+                Intent nextScreen = new Intent (QuestionScreen.this, ResultScreen.class);
+                Bundle b = new Bundle();
+                b.putInt("count", count);
+                b.putInt("qcount", qcount);
+                nextScreen.putExtras(b);
+                startActivity(nextScreen);
+                System.out.println("RESULT");
         }
+
+
 
         @Override
         protected Void doInBackground(Void... voids) {
@@ -147,7 +187,14 @@ public class QuestionScreen extends AppCompatActivity {
                 } catch (JSONException ex) {
                     ex.printStackTrace();
                 }
-                Questions question = new Questions(id, title);
+                String answer = null;
+                try {
+                    answer = q.getString("answerId");
+                    System.out.println(answer);
+                } catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
+                Questions question = new Questions(id, title, answer);
                 System.out.println("CHECK");
                 System.out.println(question.getTitle());
                 questionList.add(question);

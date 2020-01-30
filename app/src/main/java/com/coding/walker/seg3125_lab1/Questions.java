@@ -4,9 +4,20 @@ public class Questions {
     private String id;
     private String title;
 
-    public Questions(String id, String title) {
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    private String answer;
+
+    public Questions(String id, String title, String answer) {
         this.id = id;
         this.title = title;
+        this.answer = answer;
     }
 
     public String getId() {

@@ -2,44 +2,54 @@
   "questions": [
   {
       "id": 1,
-      "title": "You are driving at an intersection and notice that there is no police officer or signal light nearby. A few seconds later a pedestrian appears at the crosswalk towards your side of the road. What do you do?"
+      "title": "You are driving at an intersection and notice that there is no police officer or signal light nearby. A few seconds later a pedestrian appears at the crosswalk towards your side of the road. What do you do?",
+      "answerId": 1
     },
     {
       "id": 2,
-      "title": "Motorists are not allowed to change lanes in traffic without:"
+      "title": "Motorists are not allowed to change lanes in traffic without:",
+      "answerId": 2
     },
     {
       "id": 3,
-      "title": "You see a school bus unloading passengers on the road but have failed to stop your car. This will result in?"
+      "title": "You see a school bus unloading passengers on the road but have failed to stop your car. This will result in?",
+      "answerId": 3
     },
     {
       "id": 4,
-      "title": "You’re descending down a steep hill using manual transmission, what safe driving practice should you use:"
+      "title": "You’re descending down a steep hill using manual transmission, what safe driving practice should you use:",
+      "answerId": 2
     },
     {
       "id": 5,
-      "title": "Motorists who don’t follow the stopping rules meant for school crossing will incur:"
+      "title": "Motorists who don’t follow the stopping rules meant for school crossing will incur:",
+      "answerId": 1
     },
     {
       "id": 6,
-      "title": "Motorists who don’t follow the stopping rules meant for school crossing will incur:"
+      "title": "Motorists who don’t follow the stopping rules meant for school crossing will incur:",
+      "answerId": 3
     },
     {
       "id": 7,
-      "title": "You’re a G2 driver, what should your blood alcohol level be while driving?"
-    }
+      "title": "You’re a G2 driver, what should your blood alcohol level be while driving?",
+      "answerId": 3
+    },
     {
       "id": 8,
-      "title": "You’ve changed your home address. How soon are you (a licensed driver) supposed to notify the MTO?"
+      "title": "You’ve changed your home address. How soon are you (a licensed driver) supposed to notify the MTO?",
+      "answerId": 2
     },
     {
       "id": 9,
-      "title": "You’re changing lanes on a multi-lane highway. What are you supposed to do?"
+      "title": "You’re changing lanes on a multi-lane highway. What are you supposed to do?",
+      "answerId": 3
     },
     {
       "id": 10,
-      "title": "While driving on a highway, on what condition can you drive at a maximum speed limit?"
-    },
+      "title": "While driving on a highway, on what condition can you drive at a maximum speed limit?",
+      "answerId": 1
+    }
 
   ],
   "choices": [
