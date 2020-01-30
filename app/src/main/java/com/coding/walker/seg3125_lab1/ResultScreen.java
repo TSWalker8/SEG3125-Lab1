@@ -3,12 +3,15 @@ package com.coding.walker.seg3125_lab1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultScreen extends AppCompatActivity {
 
     TextView passfail;
     TextView result;
+    Button restart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,17 @@ public class ResultScreen extends AppCompatActivity {
             passfail.setText("Unfortunately you have not passed, you required a " + pgpercent + "% and you received a:");
             result.setText(disp+"%");
         }
+
+        restart = findViewById(R.id.Restart);
+
+        restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResultScreen.this, WelcomeScreen.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }
