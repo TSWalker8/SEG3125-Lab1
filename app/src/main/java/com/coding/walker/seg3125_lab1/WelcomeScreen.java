@@ -16,12 +16,27 @@ public class WelcomeScreen extends AppCompatActivity {
     private Spinner options;
     private Button select;
     private String choice;
+    private double passgrade;
+    private int qnum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
         addItemsOnSpinner();
+        Intent intent = getIntent();
+        System.out.println(intent);
+        Bundle extras = intent.getExtras();
+        System.out.println(extras);
+        if (extras==null){
+            passgrade= .5;
+            qnum = 10;
+        }
+        else{
+            extras = intent.getExtras();
+            passgrade = extras.getInt("passgrade");
+            qnum = extras.getInt("qnum");
+        }
         options.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -38,7 +53,11 @@ public class WelcomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent nextScreen = new Intent (WelcomeScreen.this, QuestionScreen.class);
-                nextScreen.putExtra("choice", choice);
+                Bundle b = new Bundle();
+                b.putString("choice", choice);
+                b.putDouble("passgrade", .5);
+                b.putInt("qnum", qnum);
+                nextScreen.putExtras(b);
                 startActivity(nextScreen);
             }
         });

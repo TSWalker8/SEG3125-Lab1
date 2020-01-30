@@ -27,7 +27,8 @@ public class QuestionScreen extends AppCompatActivity {
     TextView question;
     Button buttona, buttonb, buttonc;
     String text;
-    int i,j,k,l, count, qcount;
+    int i,j,k,l, count, qcount, qnum;
+    double passgrade;
 
 
     @Override
@@ -38,7 +39,10 @@ public class QuestionScreen extends AppCompatActivity {
         questionList = new ArrayList<Questions>();
         answerList = new ArrayList<String>();
         Intent intent = getIntent();
-        text = intent.getStringExtra("choice");
+        Bundle extras = intent.getExtras();
+        text = extras.getString("choice");
+        passgrade = extras.getDouble("passgrade");
+        qnum = extras.getInt("qnum");
         System.out.println(text);
         title = findViewById(R.id.Title);
         title.setText(text);
@@ -95,7 +99,7 @@ public class QuestionScreen extends AppCompatActivity {
                     if (questionList.get(i).getAnswer().equals("2")){
                         count++;
                     }
-                    if (qcount>= 10){
+                    if (qcount>= qnum){
                         resultScreen();
                     }
                     qcount++;
@@ -123,7 +127,7 @@ public class QuestionScreen extends AppCompatActivity {
         }
 
         protected void changeQuestion(){
-            if (qcount <=10){
+            if (qcount <=qnum){
                 i++;
                 j=j+3;
                 k=k+3;
@@ -141,6 +145,7 @@ public class QuestionScreen extends AppCompatActivity {
                 Bundle b = new Bundle();
                 b.putInt("count", count);
                 b.putInt("qcount", qcount);
+                b.putDouble("passgrade", passgrade);
                 nextScreen.putExtras(b);
                 startActivity(nextScreen);
                 System.out.println("RESULT");

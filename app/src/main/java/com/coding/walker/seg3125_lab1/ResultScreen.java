@@ -14,14 +14,14 @@ public class ResultScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_screen);
-        double passgrade = .5;
-        String pgpercent = Double.toString(passgrade*100);
         passfail= findViewById(R.id.PassFail);
         result = findViewById(R.id.Result);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         int count = extras.getInt("count");
         int qcount = extras.getInt("qcount");
+        double passgrade = extras.getDouble("passgrade");
+        String pgpercent = Double.toString(passgrade*100);
         double res = (double) count/qcount;
         double percent = res*100;
         String disp= Double.toString(percent);
