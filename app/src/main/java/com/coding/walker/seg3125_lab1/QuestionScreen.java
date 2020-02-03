@@ -70,7 +70,7 @@ public class QuestionScreen extends AppCompatActivity {
             i=0;
             j=0;
             k=1;
-            j=2;
+            l=2;
             count=0;
             qcount=1;
             System.out.println("Hello");
@@ -84,7 +84,7 @@ public class QuestionScreen extends AppCompatActivity {
                     if (questionList.get(i).getAnswer().equals("1")){
                         count++;
                     }
-                    if (qcount>= 10){
+                    if (qcount>= qnum){
                         resultScreen();
                     }
                     qcount++;
@@ -114,7 +114,7 @@ public class QuestionScreen extends AppCompatActivity {
                     if (questionList.get(i).getAnswer().equals("3")){
                         count++;
                     }
-                    if (qcount>= 10){
+                    if (qcount>= qnum){
                         resultScreen();
                     }
                     qcount++;

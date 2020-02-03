@@ -1,6 +1,7 @@
 package com.coding.walker.seg3125_lab1;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +16,9 @@ import java.util.List;
 public class WelcomeScreen extends AppCompatActivity {
     private Spinner options;
     private Button select;
+    private FloatingActionButton settings;
     private String choice;
-    private double passgrade;
+    public double mainPassgrade;
     private int qnum;
 
     @Override
@@ -28,14 +30,14 @@ public class WelcomeScreen extends AppCompatActivity {
         System.out.println(intent);
         Bundle extras = intent.getExtras();
         System.out.println(extras);
-        if (extras==null){
-            passgrade= .5;
+        if (intent.hasExtra("passgrade") == false){
+
+            mainPassgrade= .5;
             qnum = 10;
         }
         else{
-            extras = intent.getExtras();
-            passgrade = extras.getInt("passgrade");
-            qnum = extras.getInt("qnum");
+            mainPassgrade = extras.getDouble("passgrade", 0.5);
+            qnum = extras.getInt("qnum", 10);
         }
         options.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -55,9 +57,17 @@ public class WelcomeScreen extends AppCompatActivity {
                 Intent nextScreen = new Intent (WelcomeScreen.this, QuestionScreen.class);
                 Bundle b = new Bundle();
                 b.putString("choice", choice);
-                b.putDouble("passgrade", .5);
+                b.putDouble("passgrade", mainPassgrade);
                 b.putInt("qnum", qnum);
                 nextScreen.putExtras(b);
+                startActivity(nextScreen);
+            }
+        });
+        settings= findViewById(R.id.Settings);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextScreen = new Intent (WelcomeScreen.this, Settings.class);
                 startActivity(nextScreen);
             }
         });
