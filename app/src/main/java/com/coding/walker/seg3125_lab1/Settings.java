@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import java.util.regex.*;
 
 import java.util.ArrayList;
 
@@ -48,6 +49,32 @@ public class Settings extends AppCompatActivity {
     private Boolean InputAreGood()
     {
         Boolean result = true;
+        if (userPercentage.isEmpty() || userNumber.isEmpty()){
+            AlertDialog alertDialog = new AlertDialog.Builder(Settings.this).create();
+            alertDialog.setTitle("Alert");
+            alertDialog.setMessage("You did not input anything");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+            return result = false;
+        }
+        if (userPercentage.matches("^[a-zA-Z]*$") || (userNumber.matches("^[a-zA-Z]*$"))){
+            AlertDialog alertDialog = new AlertDialog.Builder(Settings.this).create();
+            alertDialog.setTitle("Alert");
+            alertDialog.setMessage("You attempted to input a character");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+            return result = false;
+        }
         if((50>Double.parseDouble(userPercentage)) || ((Double.parseDouble(userPercentage)>100)))
         {
             AlertDialog alertDialog = new AlertDialog.Builder(Settings.this).create();
